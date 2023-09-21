@@ -99,46 +99,46 @@
 
 // last working code
 
-const express = require('express');
-const app = express();
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+// const express = require('express');
+// const app = express();
+// const mongoose = require("mongoose");
+// const bodyParser = require("body-parser");
 
-app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
-app.use(express.static(__dirname));
-
-// Data schema
-const noteSchema = {
-  name: String,
-  email: String,
-  subject: String,
-  message: String
-};
-
-const Note = mongoose.model("Note", noteSchema);
-module.exports = Note;
-
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
+// app.use(bodyParser.urlencoded({ extended: true }));
+// mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+// app.use(express.static(__dirname));
 
 
-app.post("/", function(req, res) {
-  let newNote = new Note({
-    name: req.body.yourname,
-    email: req.body.youremail,
-    subject: req.body.subject,
-    message: req.body.message
-  });
+// const noteSchema = {
+//   name: String,
+//   email: String,
+//   subject: String,
+//   message: String
+// };
 
-  newNote.save();
-  res.redirect('/'); 
-});
+// const Note = mongoose.model("Note", noteSchema);
+// module.exports = Note;
+
+// app.get('/', function(req, res) {
+//   res.sendFile(__dirname + '/index.html');
+// });
 
 
-    app.listen(3030, function() {
-      console.log('Server listening on port 3030');
-    });
+// app.post("/", function(req, res) {
+//   let newNote = new Note({
+//     name: req.body.yourname,
+//     email: req.body.youremail,
+//     subject: req.body.subject,
+//     message: req.body.message
+//   });
+
+//   newNote.save();
+//   res.redirect('/'); 
+// });
+
+
+//     app.listen(3030, function() {
+//       console.log('Server listening on port 3030');
+//     });
 
 
