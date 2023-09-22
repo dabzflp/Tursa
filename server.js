@@ -8,8 +8,12 @@ const Note = require('./contact.js');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB connection using environment variable
-const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/test'; // Fallback to a local MongoDB URI for development
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true })
+app.use(express.static(__dirname));
+
+// const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/test';     // Fallback to a local MongoDB URI for development
+// mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Serve static files from a directory (e.g., 'public')
 app.use(express.static(__dirname + '/'));
@@ -45,9 +49,10 @@ app.post("/", function(req, res) {
 });
 
 // Use the PORT environment variable for production or 3030 for local development
-const port = process.env.PORT || 3030;
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+
+app.listen(3030, function() {
+  console.log('Server listening on port 3030');
+
 });
 
 
