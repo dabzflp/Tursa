@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(express.static(__dirname)); 
 // Serve static files from a directory (e.g., 'public')
-app.use(express.static(__dirname + '/'));
+// app.use(express.static(__dirname + '/'));
 
 // Define the root route
 app.get('/', function(_req, res) {
