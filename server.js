@@ -18,7 +18,7 @@ app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/'));
 
 // Define the root route
-app.get('/', function(req, res) {
+app.get('/', function(_req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
@@ -39,7 +39,8 @@ app.post("/", function(req, res) {
   newNote.save()
     .then(() => {
       console.log('Successful!');
-      res.redirect('/');
+      res.send('Thank you, your message has been received');
+      // res.redirect('/');
     })
     .catch((error) => {
       console.error('Error:', error);
