@@ -49,8 +49,8 @@ app.post("/", function(req, res) {
 
 // Use the PORT environment variable for production or 3030 for local development
 
-app.listen(3030, function() {
-  console.log('Server listening on port 3030');
+app.listen(8080, function() {
+  console.log('Server listening on port 8080');
 
 });
 
