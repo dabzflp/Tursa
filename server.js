@@ -8,11 +8,10 @@ const Note = require('./contact.js');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB connection using environment variable
-
 mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
-app.use(express.static(__dirname)); 
+
 // Serve static files from a directory (e.g., 'public')
-// app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname));
 
 // Define the root route
 app.get('/', function(_req, res) {
@@ -44,11 +43,11 @@ app.post("/", function(req, res) {
     });
 });
 
-// Use the PORT environment variable for production or 3030 for local development
+// Use the PORT environment variable for production or 8080 for local development
+const port = process.env.PORT || 8080;
 
-app.listen(8080, function() {
-  console.log('Server listening on port 8080');
-
+app.listen(port, function() {
+  console.log(`Server listening on port ${port}`);
 });
 
 
