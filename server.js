@@ -39,8 +39,7 @@ app.post("/", function(req, res) {
   newNote.save()
     .then(() => {
       console.log('Successful!');
-      res.send('Thank you, your message has been received');
-      // res.redirect('/');
+      res.redirect('/');
     })
     .catch((error) => {
       console.error('Error:', error);
