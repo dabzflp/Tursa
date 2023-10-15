@@ -1409,33 +1409,11 @@
             </div>
 
           </div>
-
+  <!-- contact form -->
           <div class="col-lg-8">
-            <!-- <form  action="/" method="post">
-              <div class="col-md-6 form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" required>
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-              </div>
-              <div>
-                <label for="subject">Subject</label>
-                <input type="text" name="subject" id="subject" required>
-              </div>
-              <div>
-                <label for="message">Message</label>
-                <textarea name="message" id="message" required></textarea>
-              </div>
-              <div>
-                <button type="submit">Submit</button>
-              </div>
-            </form>
- -->
-
-
-            <form  action="/" method="post" role="form" class="php-email-form">
+     
+            <form  action="/" method="post" role="form" class="submit-mongodb">
+              <!-- <form  action="/" method="post" role="form" class="php-email-form"></form> -->
               <div class="row">
                 <div class="col-md-6 form-group">
                   <!-- <label for="name">Name</label> -->
@@ -1451,14 +1429,16 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div> 
-               <div class="error-message"></div> 
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              
+              <div class="text-center-update"><button type="submit" class="send">Send Message</button></div>
             </form>
-          </div><!-- End Contact Form -->
+
+            <!-- Status message div -->
+           <div id="message-status" class="message-status"></div>
+          </div>
+
+          <script src="client.js"></script>
+          <!-- End Contact Form -->
 
         </div>
 

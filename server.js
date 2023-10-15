@@ -33,14 +33,16 @@ app.post("/", function(req, res) {
 
   // Save the data to MongoDB
   newNote.save()
-    .then(() => {
+  .then(() => {
       console.log('Successful!');
-      res.redirect('/');
-    })
-    .catch((error) => {
+      const successMessage = "Message Sent";
+      res.redirect('/?status=' + encodeURIComponent(successMessage));
+  })
+  .catch((error) => {
       console.error('Error:', error);
-      res.status(500).send('Internal Server Error');
-    });
+      const errorMessage = "Message Failed";
+      res.redirect('/?status=' + encodeURIComponent(errorMessage));
+  });
 });
 
 // Use the PORT environment variable for production or 8080 for local development

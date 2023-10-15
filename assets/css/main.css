@@ -3251,3 +3251,37 @@ section {
 .lightbulb {
   font-size: 20px;
 }
+
+.send {
+  border-top: 20px;
+  background-color: #4797ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send:hover {
+  background-color: #1c61e2;
+}
+
+.text-center-update {
+  text-align: center !important;
+  margin-top: 30px;
+}
+
+.message-status {
+  display: none; /* Initially hide the message */
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.message-success {
+  color: green;
+}
+
+.message-fail {
+  color: red;
+}
