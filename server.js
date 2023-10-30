@@ -14,13 +14,15 @@ mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.ne
 app.use(express.static(__dirname));
 
 // Define the root route
-app.get('/', function(_req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
+// app.get('/', function(_req, res) {
+//   res.sendFile(__dirname + '/index.html');
+// });
 
 // Define the route to handle form submissions
 app.post("/", function(req, res) {
-  console.log(req.body); // Check if the form data is received correctly
+  console.log(req.body); 
+  
+  // Check if the form data is received correctly
 
   let newNote = new Note({
     name: req.body.name,
