@@ -8,7 +8,7 @@ const Note = require('./contact.js');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Access the MongoDB connection string from environment variables
-const mongoURI = process.env.MONGODB_URI;
+const mongoURI = process.env.MONGO_URI;
 
 // MongoDB connection using environment variable
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -20,7 +20,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 });
 
 // Serve static files from a directory 
-app.use(express.static(__dirname + "/"));
+app.use(express.static(__dirname + "/",));
 
 // Define the root route
 // app.get('/', function(_req, res) {
