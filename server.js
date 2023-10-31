@@ -7,8 +7,17 @@ const Note = require('./contact.js');
 // Use bodyParser middleware to parse JSON and form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Access the MongoDB connection string from environment variables
+const mongoURI = process.env.MONGODB_URI;
+
 // MongoDB connection using environment variable
-mongoose.connect('mongodb+srv://davidpeter685:bolarinwa@tursa.unwmsqc.mongodb.net/test', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => {
+  console.log('connected to MongoDB')
+})
+.catch((err) => {
+  console.error(`Error connecting to MongoDB: ${err}`);
+});
 
 // Serve static files from a directory (e.g., 'public')
 app.use(express.static(__dirname));
